@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "51tracking"
+version = "0.1.0"
+description = "The Python SDK of 51Tracking API"
+authors = ["51Tracking <service@51tracking.org>"]
+readme = "README.md"
+homepage = "https://www.51tracking.com/v4/api-index/API-"
+repository = "https://github.com/51tracking/51tracking-sdk-python"
+documentation = "https://github.com/51tracking/51tracking-sdk-python"
+keywords = ["51tracking", "api", "tracking"]
+
+packages = [
+    { include = "tracking51" },
+    { include = "*.md" },
+    { include = "LICENSE" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.31.0"
+urllib3 = "1.26.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
