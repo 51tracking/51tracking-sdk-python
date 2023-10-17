@@ -84,9 +84,9 @@ import tracking51
 tracking51.api_key = 'you api key'
 
 try:
-   params = {'tracking_number': ''}
-   couriers = tracking51.courier.detect(params)
-   print(couriers)
+   params = {'tracking_number': '','courier_code':'usps'}
+   result = tracking51.tracking.create_tracking(params)
+   print(result)
 except tracking51.exception.Tracking51Exception as ce:
    print(ce)
 
