@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "51tracking"
-version = "0.1.0"
+version = "0.1.1"
 description = "The Python SDK of 51Tracking API"
 authors = ["51Tracking <service@51tracking.org>"]
 readme = "README.md"

@@ -50,7 +50,14 @@ import tracking51
 
 tracking51.api_key = 'you api key'
 
-couriers = tracking51.courier.get_all_couriers()
+try:
+  couriers = tracking51.courier.get_all_couriers()
+  print(couriers)
+except tracking51.exception.Tracking51Exception as ce:
+  print(ce)
+except Exception as e:
+  print("other error:", e)  
+
 ```
 
 ## Testing
@@ -103,6 +110,9 @@ try:
   print(result)
 except tracking51.exception.Tracking51Exception as ce:
   print(ce)
+except Exception as e:
+  print("other error:", e)  
+
 ```
 
 ## Trackings
@@ -115,6 +125,9 @@ try:
   print(result)
 except tracking51.exception.Tracking51Exception as ce:
   print(ce)
+except Exception as e:
+  print("other error:", e)  
+
 ```
 
 ##### 获取多个物流单号的查询结果
@@ -124,11 +137,14 @@ try:
   # Perform queries based on various conditions
   # params = {'tracking_numbers': '92612903029511573030094547', 'courier_code': 'usps'}
   # params = {'tracking_numbers': '92612903029511573030094547,92612903029511573030094548', 'courier_code': 'usps'}
-  params = {'created_date_min': '2023-08-23T14:00:00+08:00', 'created_date_max': '2023-08-23T15:04:00+08:00'}
+  params = {'created_date_min': '2023-08-23T14:00:00+00:00', 'created_date_max': '2023-08-23T15:04:00+00:00'}
   result = tracking51.tracking.get_tracking_results(params)
   print(result)
 except tracking51.exception.Tracking51Exception as ce:
   print(ce)
+except Exception as e:
+  print("other error:", e)  
+
 ```
 
 ##### 添加多个物流单号（一次调用最多创建 40 个物流单号）
@@ -141,6 +157,9 @@ try:
   print(result)
 except tracking51.exception.Tracking51Exception as ce:
   print(ce)
+except Exception as e:
+  print("other error:", e)  
+
 ```
 
 ##### 根据ID更新物流信息
@@ -153,6 +172,9 @@ try:
   print(result)
 except tracking51.exception.Tracking51Exception as ce:
   print(ce)
+except Exception as e:
+  print("other error:", e)  
+
 ```
 
 ##### 通过ID删除单号
@@ -164,6 +186,9 @@ try:
   print(result)
 except tracking51.exception.Tracking51Exception as ce:
   print(ce)
+except Exception as e:
+  print("other error:", e)  
+
 ```
 
 ##### 通过ID重新查询过期的单号
@@ -175,6 +200,9 @@ try:
   print(result)
 except tracking51.exception.Tracking51Exception as ce:
   print(ce)
+except Exception as e:
+  print("other error:", e)  
+
 ```
 ## Air Waybill
 ##### 查询航空运单的结果
@@ -186,6 +214,9 @@ try:
   print(result)
 except tracking51.exception.Tracking51Exception as ce:
   print(ce)
+except Exception as e:
+  print("other error:", e)  
+
 ```
 
 ## 响应状态码
